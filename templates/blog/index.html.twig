@@ -8,10 +8,10 @@
 {# content #}
 {% block body %}
 	<h1 class="text-indigo-700 font-bold text-3xl pb-4">Nos derniers articles</h1>
-
 	<div class="grid grid-cols-3 space-x-3 pt-10">
-		{% include "blog/components/card.html.twig"%}
-		{% include "blog/components/card.html.twig"%}
-		{% include "blog/components/card.html.twig"%}
+		{% for post in posts %}
+			{% include "blog/components/card.html.twig"%}
+		 {% endfor %}
 	</div>
 {% endblock %}
+

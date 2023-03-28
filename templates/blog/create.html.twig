@@ -1,0 +1,22 @@
+{# Utilisation du layout #}
+{% extends "base.html.twig" %}
+
+{# title of page #}
+{% block title %}Accueil
+{% endblock %}
+
+{# content #}
+{% block body %}
+	<h1 class="text-indigo-700 font-bold text-3xl pb-4">Créer un article</h1>
+
+	{# {{ form(showForm)}} #}
+	<div class="max-w-sm mx-auto">
+		{{ form_start(showForm)}}
+			{{ form_widget(showForm)}}
+			<div class="mt-5">
+				<input type="submit" value="Envoyer" class="btn btn-secondary">
+			</div>
+		{{ form_end(showForm)}}
+	</div>
+{% endblock %}
+

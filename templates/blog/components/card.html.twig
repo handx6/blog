@@ -1,10 +1,10 @@
 <div class="card max-w-sm bg-base-100 shadow-xl">
-	<figure><img src="{{ asset('img/hibou.jpeg')}}" alt="Shoes"/></figure>
+	<figure><img src="{{ asset(post.urlImg)}}" alt="Shoes"/></figure>
 	<div class="card-body">
-		<h2 class="card-title">Shoes!</h2>
-		<p>If a dog chews shoes whose shoes does he choose?</p>
+		<h2 class="card-title">{{post.title}}</h2>
+		<p>{{post.content}}</p>
 		<div class="card-actions justify-end">
-			<button class="btn btn-primary">Lire</button>
+			<a href="{{ path('app_show', {'id': post.id}) }}" class="btn btn-primary">Lire</a>
 		</div>
 	</div>
 </div>

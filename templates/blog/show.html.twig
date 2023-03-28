@@ -1,0 +1,26 @@
+{# Utilisation du layout #}
+{% extends "base.html.twig" %}
+
+{# title of page #}
+{% block title %}{{post.title}}
+{% endblock %}
+
+{# content #}
+{% block body %}
+	<div class="max-auto max-w-md">
+		<h1 class="text-indigo-700 font-bold text-3xl pb-4">{{ post.title}}</h1>
+		<div class="mt-6">
+			<img src="{{asset(post.urlImg)}}" alt="{{post.title}}">
+		</div>
+		<div class="">
+			<p>
+				{{ post.content}}
+			</p>
+		</div>
+		<div class="mt-6">
+			<a href="" class="btn btn-primary">Modifier</a>
+			<a href="{{ path('app_delete', { 'id': post.id })}}" class="btn btn-error">Supprimer</a>
+		</div>
+	</div>
+{% endblock %}
+
