@@ -59,7 +59,7 @@ class BlogController extends AbstractController
         // fetch data from input
         $form->handleRequest($request);
         // submit form
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             // stock data from user
             $newPost = $form->getData();
             // check if a pic has been chosen
