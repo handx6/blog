@@ -1,5 +1,8 @@
 <div class="card max-w-sm bg-base-100 shadow-xl">
-	<figure><img src="{{ asset(post.urlImg)}}" alt="Shoes"/></figure>
+	{% if post.urlImg %}
+		<figure><img src="{{ asset(post.urlImg)}}" alt="Shoes"/></figure>
+	{% endif %}
+
 	<div class="card-body">
 		<h2 class="card-title">{{post.title}}</h2>
 		<p>{{post.content}}</p>
@@ -8,3 +11,4 @@
 		</div>
 	</div>
 </div>
+
