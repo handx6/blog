@@ -2,7 +2,8 @@
 {% extends "base.html.twig" %}
 
 {# title of page #}
-{% block title %}{{post.title}}
+{% block title %}
+	{{post.title}}
 {% endblock %}
 
 {# content #}
@@ -17,10 +18,14 @@
 				{{ post.content}}
 			</p>
 		</div>
-		<div class="mt-6">
-			<a href="" class="btn btn-primary">Modifier</a>
-			<a href="{{ path('app_delete', { 'id': post.id })}}" class="btn btn-error">Supprimer</a>
-		</div>
+		{% if app.user %}
+			<div class="mt-6">
+				<a href="{{ path('app_update', { 'id': post.id })}}" class="btn btn-primary">Modifier</a>
+
+				<a href="{{ path('app_delete', { 'id': post.id })}}" class="btn btn-error">Supprimer</a>
+			</div>
+		{% endif %}
+
 	</div>
 {% endblock %}
 
